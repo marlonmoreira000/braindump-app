@@ -2,7 +2,7 @@
 
 ---
 
-## Statement of Purpose and Scope
+## 1. Statement of Purpose and Scope
 
 #### What will this application do?
 
@@ -18,7 +18,7 @@ Anyone looking to save a bit of time and boost their productivity.
 
 #### How will the target audience use this application?
 
-## Features
+## 2. Features
 
 #### Feature 1: Adding and deleting tasks
 
@@ -32,7 +32,7 @@ The app sorts (and color codes) daily tasks based on their importance and when t
 
 Users are able to add their name as an argument on the command line, which personalises user experience in the app by displaying their name in the menu.
 
-## User Interaction and Experience
+## 3. User Interaction and Experience
 
 #### How the user will find out how to interact with/use each feature?
 
@@ -46,22 +46,22 @@ The users will interact with the program via their keyboard only. They will be r
 
 All input will be validated. If input is invalid, the user will be asked to retry. Other errors will be treated through standard error-handling methods (i.e. raising errors when needed and using `begin-rescue-end` blocks to handle them)
 
-## Control Flow Diagram
+## 4. Control Flow Diagram
 
-!(control-flow-diagram)[/docs/control-flow-diagram.png]
+![control-flow-diagram](/docs/control-flow-diagram.png)
 
-## Implementation Plan
+## 5. Implementation Plan
 
 #### Trello Board
 
-The Trello board for this project can be found (here.)[https://trello.com/b/hXgtQZNi/coder-exercise]
+The Trello board for this project can be found [here.](https://trello.com/b/hXgtQZNi/coder-exercise)
 
 #### Implementation Checklist
 
 
 | Feature | Steps                                                                                                           | Deadline      |
 | -------------- | --------------------------------------------------------------- | ------------- |
-| Add a task          | - User selects option to add task<br />- User is prompted for input<br />- Input is validated<br />- User input is stored in Task class<br />- Task is added to Schedule<br />- Confirmation message is displayed<br />- User is asked if they would like to add another task, or exit back to main menu| Due Date |
-| Delete a task          | - User selects option to delete task<br />- User is presented with a printout of current tasks<br />- User chooses which task they would like to delete<br />- Input is validated<br />- Task is removed from Schedule<br />- Confirmation message is displayed<br />- User is asked if they would like to delete another task, or exit back to main menu| Due Date |
-| Show schedule          | - User selects option to show schedule<br />- Schedule is sorted by algorithm<br />- Schedule is colorized<br />- Schedule is printed to screen<br />- User is prompted to exit back to main menu<br />| Due Date |
-| Clear schedule         | - User selects option to clear schedule<br />- User is shown a warning that this action will delete all current tasks, are they sure they would like to continue?<br />- User chooses yes or no<br />- Input is validated<br />- If yes, Schedule is cleared, confirmation message is displayed and return to main menu<br />- If no, return to main menu<br />| Due Date |
+| Add a task          | - User selects option to add task<br />- User is prompted for input<br />- Input is validated<br />- User input is stored in Task class<br />- Task is added to Schedule<br />- Confirmation message is displayed<br />- User is asked if they would like to add another task, or exit back to main menu| 28th March |
+| Delete a task          | - User selects option to delete task<br />- User is presented with a printout of current tasks<br />- User chooses which task they would like to delete<br />- Input is validated<br />- Task is removed from Schedule<br />- Confirmation message is displayed<br />- User is asked if they would like to delete another task, or exit back to main menu| 28th March |
+| Show schedule          | - User selects option to show schedule<br />- Schedule is sorted by algorithm<br />- Schedule is colorized<br />- Schedule is printed to screen<br />- User is prompted to exit back to main menu<br />| 29th March |
+| Clear schedule         | - User selects option to clear schedule<br />- User is shown a warning that this action will delete all current tasks, are they sure they would like to continue?<br />- User chooses yes or no<br />- Input is validated<br />- If yes, Schedule is cleared, confirmation message is displayed and return to main menu<br />- If no, return to main menu<br />| 29th March |
