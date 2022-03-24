@@ -24,11 +24,11 @@ INSERT method 2 here
 
 
 
-## **Features**
+## Features
 
 INSERT list of features here
 
-## **Acknowledgements**
+## Acknowledgements
 
 INSERT acknowledgements here
 
