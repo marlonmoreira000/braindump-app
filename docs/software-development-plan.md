@@ -34,6 +34,8 @@
 
 #### Trello Board
 
+The Trello board for this project can be found (here.)[https://trello.com/b/hXgtQZNi/coder-exercise]
+
 #### Implementation Checklist
 
 
