@@ -5,4 +5,8 @@ class Schedule
     def initialize(task_list = [])
         @task_list = task_list
     end
+
+    def add_task(task)
+        @task_list.append(task)
+    end
 end
