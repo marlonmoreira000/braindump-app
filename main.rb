@@ -4,7 +4,8 @@ program_running = true
 
 while program_running
     prompt = TTY::Prompt.new
-    menu_selection = prompt.select("Menu selection", ["Add task", "Delete task", "See schedule", "Clear schedule", "Quit"])
+    menu_selection = prompt.select("Menu selection", ["Add task", "Delete task", "See schedule",
+                                                      "Clear schedule", "Quit"])
 
     case menu_selection
     when "Add task"
