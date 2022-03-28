@@ -15,4 +15,9 @@ describe Schedule do
         end
     end
 
+    context "* instance methods" do
+        it "task_descriptions method returns correct values" do
+            expect(schedule1.task_descriptions).to eq ["do resume"]
+        end
+    end
 end

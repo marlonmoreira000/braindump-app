@@ -1,5 +1,6 @@
 # IMPORTS
 require "tty-prompt"
+require "tty-font"
 require "./functions"
 require "./task"
 require "./schedule"
@@ -7,9 +8,11 @@ require "./schedule"
 # CONSTANTS
 importances = { "Low" => 1, "Medium" => 2, "High" => 3, "Very high" => 4 }
 dues = { "Evening" => 1, "Afternoon" => 2, "Lunchtime" => 3, "Morning" => 4 }
+font = TTY::Font.new(:doom)
 
-
+# MAIN PROGRAM
 program_running = true
+puts font.write("dayplanner")
 schedule = Schedule.new
 
 while program_running
@@ -37,6 +40,9 @@ while program_running
 
     when "Delete task"
         puts "delete task page"
+        # print all current tasks
+        tasks_to_delete = prompt.multi_select("Select task/s to delete.", schedule.task_descriptions)
+        p tasks_to_delete
       # same logic and output as add task
 
     when "See schedule"
@@ -50,7 +56,7 @@ while program_running
     when "Quit"
         puts "Goodbye!"
         program_running = false
-        
+
     else
         puts "i'm not sure how you arrived here but i'm scared."
     end
