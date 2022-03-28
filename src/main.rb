@@ -1,3 +1,6 @@
+# TODOS
+# delete tasks method: what msg to output if deleting no tasks?
+
 # IMPORTS
 require "tty-prompt"
 require "tty-font"
@@ -39,18 +42,20 @@ while program_running
         end
 
     when "Delete task"
-        puts "delete task page"
-        # print all current tasks
-        tasks_to_delete = prompt.multi_select("Select task/s to delete.", schedule.task_descriptions)
-        p tasks_to_delete
-        confirm_delete = prompt.yes?("Are you sure you want to permenantly delete these #{tasks_to_delete.length} tasks?")
-        if confirm_delete
-            # delete tasks
-            Schedule.delete(tasks_to_delete)
-            # show confirmation msg
-
+        if schedule.task_list.empty?
+            puts "You currently have no tasks."
+        else
+            tasks_to_delete = prompt.multi_select("Select task/s to delete.", schedule.task_descriptions)
+            if tasks_to_delete.empty?
+                puts "You did not choose any tasks to delete."
+            else
+                confirm_delete = prompt.yes?("Are you sure you want to delete this task/s?")
+                if confirm_delete
+                    schedule.delete(tasks_to_delete)
+                    puts "You deleted #{tasks_to_delete.length} task/s."
+                end
+            end
         end
-      # same logic and output as add task
 
     when "See schedule"
         puts "show schedule page"

@@ -19,10 +19,6 @@ class Schedule
     end
 
     def delete(tasks_to_delete_arr)
-        # get a list of descriptions we want to delete --> param
-        # delete each corresponding task object from task list -->
-        # loop through task_list
-        # for each task object, if its description is in param, remove it from task list
         @task_list.each do |task_object|
             @task_list.delete(task_object) if tasks_to_delete_arr.include?(task_object.description)
         end
