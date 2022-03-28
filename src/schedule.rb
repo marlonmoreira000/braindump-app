@@ -1,4 +1,5 @@
 require 'json'
+require "tty-table"
 
 # this class is used to hold a bunch of daily tasks (Task objects)
 class Schedule
@@ -20,11 +21,8 @@ class Schedule
         return task_descriptions
     end
 
-    def delete(tasks_to_delete_arr)
-        @task_list.each do |task_object|
-            @task_list.delete(task_object) if tasks_to_delete_arr.include?(task_object.description)
-        end
-        return task_descriptions
+    def delete_tasks(tasks_to_delete_arr)
+        @task_list.delete_if { |task_object| tasks_to_delete_arr.include?(task_object.description) }
     end
 
     def load_from_json(filepath)
@@ -48,5 +46,23 @@ class Schedule
         end
         # update task data in storage
         File.write(storage_filepath, JSON.pretty_generate(updated_data))
+    end
+
+    def table_rows
+        table_rows = []
+        @task_list.each do |task|
+            row = [task.description, task.importance, task.due]
+            table_rows.append(row)
+        end
+        return table_rows
+    end
+
+    def show_table
+        headers = %w[Description Importance Due]
+        rows = table_rows
+        table = TTY::Table.new(header: headers, rows: rows)
+        puts ""
+        puts table.render(:ascii, width: 60, resize: true)
+        puts ""
     end
 end

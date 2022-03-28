@@ -54,15 +54,15 @@ while program_running
             else
                 confirm_delete = prompt.yes?("Are you sure you want to delete this task/s?")
                 if confirm_delete
-                    schedule.delete(tasks_to_delete)
+                    schedule.delete_tasks(tasks_to_delete)
                     puts "You deleted #{tasks_to_delete.length} task/s."
                 end
             end
         end
 
     when "See schedule"
-        puts "show schedule page"
-      # to start with, just return to main menu
+        # get headers arr
+        schedule.show_table
 
     when "Clear schedule"
         puts "clear schedule page"
