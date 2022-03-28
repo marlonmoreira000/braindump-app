@@ -1,17 +1,12 @@
 [
   {
-    "description": "brush teeth",
-    "importance": "High",
+    "description": "hello",
+    "importance": "Low",
     "due": "Morning"
   },
   {
-    "description": "feed dog",
+    "description": "ola",
     "importance": "Medium",
-    "due": "Afternoon"
-  },
-  {
-    "description": "make dinner",
-    "importance": "High",
-    "due": "Evening"
+    "due": "Midday"
   }
 ]

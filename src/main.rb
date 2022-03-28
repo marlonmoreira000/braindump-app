@@ -13,16 +13,15 @@ require "./schedule"
 # dues = { "Evening" => 1, "Afternoon" => 2, "Lunchtime" => 3, "Morning" => 4 }
 font = TTY::Font.new(:doom)
 prompt = TTY::Prompt.new
-schedule_filepath = './schedule.json'
+storage_filepath = './schedule.json'
 
 # MAIN PROGRAM
 program_running = true
 puts font.write("dayplanner")
 schedule = Schedule.new
-schedule.load_from_json(schedule_filepath)
+schedule.load_from_json(storage_filepath)
 
 while program_running
-    
     menu_selection = prompt.select("Menu selection", ["Add task", "Delete task", "See schedule",
                                                       "Clear schedule", "Quit"])
 
@@ -35,15 +34,10 @@ while program_running
             description = prompt.ask("Enter task description.\n>>", required: true)
             importance = prompt.select("How important is this task?", ["Low", "Medium", "High", "Very high"])
             due = prompt.select("When is this task due?", %w[Morning Midday Afternoon Evening])
-            # create task object and add to schedule
+            # create task object
             task = Task.new(description, importance, due)
+            # add task to schedule
             schedule.add_task(task)
-            # add task to persistent storage
-                # if file does not exist --> create it
-                # append newline to file description
-            # loads json at start of program
-            # update json at end of program
-
             # print confirmation msg
             Functions.print_add_confirmation(task)
             # ask user for anymore tasks
@@ -77,6 +71,8 @@ while program_running
     when "Quit"
         puts "Goodbye!"
         program_running = false
+        # update persistent storage with new task
+        schedule.update_storage(storage_filepath)
 
     else
         puts "i'm not sure how you arrived here but i'm scared."

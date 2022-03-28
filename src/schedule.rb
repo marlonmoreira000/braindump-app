@@ -28,11 +28,25 @@ class Schedule
     end
 
     def load_from_json(filepath)
-        data = JSON.load_file(filepath, symbolize_names: true)
-        data.each do |item|
-            task = Task.new(item[:description], item[:importance], item[:due])
-            @task_list.append(task)
+        if File.file?('./schedule.json')
+            data = JSON.load_file(filepath, symbolize_names: true)
+            data.each do |item|
+                task = Task.new(item[:description], item[:importance], item[:due])
+                @task_list.append(task)
+            end
+        else
+            File.write("schedule.json", 'w') { |file| file.write("[]") }
         end
-        return data
+    end
+
+    def update_storage(storage_filepath)
+        updated_data = []
+        # create a json entry for each task object in task list
+        @task_list.each do |task|
+            task_hash = { description: task.description, importance: task.importance, due: task.due }
+            updated_data.append(task_hash)
+        end
+        # update task data in storage
+        File.write(storage_filepath, JSON.pretty_generate(updated_data))
     end
 end
