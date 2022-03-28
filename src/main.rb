@@ -17,6 +17,7 @@ font = TTY::Font.new(:doom)
 program_running = true
 puts font.write("dayplanner")
 schedule = Schedule.new
+# schedule.load_from_json(json_filepath)
 
 while program_running
     prompt = TTY::Prompt.new
@@ -35,6 +36,12 @@ while program_running
             # create task object and add to schedule
             task = Task.new(description, importance, due)
             schedule.add_task(task)
+            # add task to persistent storage
+                # if file does not exist --> create it
+                # append newline to file description
+            # loads json at start of program
+            # update json at end of program
+
             # print confirmation msg
             Functions.print_add_confirmation(task)
             # ask user for anymore tasks
