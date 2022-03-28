@@ -50,7 +50,8 @@ class Schedule
 
     def table_rows
         table_rows = []
-        @task_list.each do |task|
+        task_list_sorted = @task_list.sort_by { |task| [task.due_score, task.importance_score] }.reverse
+        task_list_sorted.each do |task|
             row = [task.description, task.importance, task.due]
             table_rows.append(row)
         end

@@ -19,7 +19,6 @@ program_running = true
 puts font.write("dayplanner")
 schedule = Schedule.new
 schedule.load_from_json(storage_filepath)
-p schedule.task_list
 
 while program_running
     menu_selection = prompt.select("Menu selection", ["Add task", "Delete task", "See schedule",
