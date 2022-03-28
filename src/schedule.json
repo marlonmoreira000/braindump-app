@@ -1,22 +1,27 @@
 [
   {
-    "description": "do assignment",
+    "description": "get the dog washed",
+    "importance": "Low",
+    "due": "Morning"
+  },
+  {
+    "description": "brush my teeth",
     "importance": "Medium",
+    "due": "Morning"
+  },
+  {
+    "description": "love my wife",
+    "importance": "Very high",
     "due": "Afternoon"
   },
   {
-    "description": "go to the hairdresser and request a refund",
-    "importance": "Medium",
+    "description": "cook dinner",
+    "importance": "High",
     "due": "Evening"
   },
   {
-    "description": "take dad down to the bank",
+    "description": "finish assignment",
     "importance": "High",
-    "due": "Midday"
-  },
-  {
-    "description": "head into town and pick up the flowers for brians wedding anniversary (see text messages)",
-    "importance": "Medium",
-    "due": "Afternoon"
+    "due": "Evening"
   }
 ]
