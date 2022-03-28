@@ -62,7 +62,7 @@ class Schedule
         rows = table_rows
         table = TTY::Table.new(header: headers, rows: rows)
         puts ""
-        puts table.render(:ascii, resize: true, padding: [0, 1])
+        puts table.render(:unicode, resize: true, padding: [0, 1])
         puts ""
     end
 end
