@@ -43,6 +43,13 @@ while program_running
         # print all current tasks
         tasks_to_delete = prompt.multi_select("Select task/s to delete.", schedule.task_descriptions)
         p tasks_to_delete
+        confirm_delete = prompt.yes?("Are you sure you want to permenantly delete these #{tasks_to_delete.length} tasks?")
+        if confirm_delete
+            # delete tasks
+            Schedule.delete(tasks_to_delete)
+            # show confirmation msg
+
+        end
       # same logic and output as add task
 
     when "See schedule"

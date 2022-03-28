@@ -19,5 +19,9 @@ describe Schedule do
         it "task_descriptions method returns correct values" do
             expect(schedule1.task_descriptions).to eq ["do resume"]
         end
+        it "delete method returns correct values" do
+            schedule1.delete(["do resume"])
+            expect(schedule1.task_list).to eq []
+        end
     end
 end
