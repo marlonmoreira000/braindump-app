@@ -9,18 +9,20 @@ require "./task"
 require "./schedule"
 
 # CONSTANTS
-importances = { "Low" => 1, "Medium" => 2, "High" => 3, "Very high" => 4 }
-dues = { "Evening" => 1, "Afternoon" => 2, "Lunchtime" => 3, "Morning" => 4 }
+# importances = { "Low" => 1, "Medium" => 2, "High" => 3, "Very high" => 4 }
+# dues = { "Evening" => 1, "Afternoon" => 2, "Lunchtime" => 3, "Morning" => 4 }
 font = TTY::Font.new(:doom)
+prompt = TTY::Prompt.new
+schedule_filepath = './schedule.json'
 
 # MAIN PROGRAM
 program_running = true
 puts font.write("dayplanner")
 schedule = Schedule.new
-# schedule.load_from_json(json_filepath)
+schedule.load_from_json(schedule_filepath)
 
 while program_running
-    prompt = TTY::Prompt.new
+    
     menu_selection = prompt.select("Menu selection", ["Add task", "Delete task", "See schedule",
                                                       "Clear schedule", "Quit"])
 
