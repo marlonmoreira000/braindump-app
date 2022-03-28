@@ -58,11 +58,11 @@ class Schedule
     end
 
     def show_table
-        headers = %w[Description Importance Due]
+        headers = ["Task Description".bold, "Importance".bold, "Due".bold]
         rows = table_rows
         table = TTY::Table.new(header: headers, rows: rows)
         puts ""
-        puts table.render(:ascii, width: 60, resize: true)
+        puts table.render(:ascii, resize: true, padding: [0, 1])
         puts ""
     end
 end

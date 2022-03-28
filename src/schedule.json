@@ -1,3 +1,22 @@
 [
-
+  {
+    "description": "do assignment",
+    "importance": "Medium",
+    "due": "Afternoon"
+  },
+  {
+    "description": "go to the hairdresser and request a refund",
+    "importance": "Medium",
+    "due": "Evening"
+  },
+  {
+    "description": "take dad down to the bank",
+    "importance": "High",
+    "due": "Midday"
+  },
+  {
+    "description": "head into town and pick up the flowers for brians wedding anniversary (see text messages)",
+    "importance": "Medium",
+    "due": "Afternoon"
+  }
 ]

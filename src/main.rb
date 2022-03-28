@@ -4,6 +4,7 @@
 # IMPORTS
 require "tty-prompt"
 require "tty-font"
+require "colorize"
 require "./functions"
 require "./task"
 require "./schedule"
@@ -31,7 +32,7 @@ while program_running
         anymore_tasks = true
         while anymore_tasks
             # get task information from user
-            description = prompt.ask("Enter task description.\n>>", required: true)
+            description = prompt.ask("Enter task description.\n>>", required: true, max: 10)
             importance = prompt.select("How important is this task?", ["Low", "Medium", "High", "Very high"])
             due = prompt.select("When is this task due?", %w[Morning Midday Afternoon Evening])
             # create task object
@@ -46,11 +47,11 @@ while program_running
 
     when "Delete task"
         if schedule.task_list.empty?
-            puts "You currently have no tasks."
+            puts "#{'>>'.red} You currently have no tasks."
         else
             tasks_to_delete = prompt.multi_select("Select task/s to delete.", schedule.task_descriptions)
             if tasks_to_delete.empty?
-                puts "You did not choose any tasks to delete."
+                puts "#{'>>'.red} You did not choose any tasks to delete."
             else
                 confirm_delete = prompt.yes?("Are you sure you want to delete this task/s?")
                 if confirm_delete
@@ -61,12 +62,18 @@ while program_running
         end
 
     when "See schedule"
-        # get headers arr
-        schedule.show_table
+        if schedule.task_list.empty?
+            puts "#{'>>'.red} You currently have no tasks."
+        else
+            schedule.show_table
+        end
 
     when "Clear schedule"
-        puts "clear schedule page"
-      # to start with, just return to main menu
+        if schedule.task_list.empty?
+            puts "#{'>>'.red} You currently have no tasks."
+        else
+            puts "do stuff"
+        end
 
     when "Quit"
         puts "Goodbye!"
