@@ -66,4 +66,8 @@ class Schedule
         puts table.render(:unicode, resize: true, padding: [0, 1])
         puts ""
     end
+
+    def delete_all_tasks
+        @task_list = []
+    end
 end

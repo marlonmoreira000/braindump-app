@@ -16,12 +16,15 @@ storage_filepath = './schedule.json'
 
 # MAIN PROGRAM
 program_running = true
+puts ""
 puts font.write("dayplanner")
+puts ""
 schedule = Schedule.new
 schedule.load_from_json(storage_filepath)
 
 while program_running
-    menu_selection = prompt.select("Menu selection", ["Add task", "Delete task", "See schedule",
+    puts ""
+    menu_selection = prompt.select("Menu selection".bold, ["Add task", "Delete task", "See schedule",
                                                       "Clear schedule", "Quit"])
 
     case menu_selection
@@ -49,7 +52,7 @@ while program_running
         else
             tasks_to_delete = prompt.multi_select("Select task/s to delete.", schedule.task_descriptions)
             if tasks_to_delete.empty?
-                puts "#{'>>'.red} You did not choose any tasks to delete."
+                puts "#{'>>'.red} No tasks were deleted."
             else
                 confirm_delete = prompt.yes?("Are you sure you want to delete this task/s?")
                 if confirm_delete
@@ -70,7 +73,11 @@ while program_running
         if schedule.task_list.empty?
             puts "#{'>>'.red} You currently have no tasks."
         else
-            puts "do stuff"
+            confirm_delete = prompt.yes?("Are you sure you want to delete all tasks?")
+            if confirm_delete
+                schedule.delete_all_tasks
+                puts "You deleted all tasks."
+            end
         end
 
     when "Quit"
