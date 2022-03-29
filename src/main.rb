@@ -6,7 +6,7 @@ require "./task"
 require "./schedule"
 
 # CONSTANTS
-# font = TTY::Font.new(:doom)
+font = TTY::Font.new(:doom)
 prompt = TTY::Prompt.new
 storage_filepath = './schedule.json'
 
@@ -18,14 +18,20 @@ schedule.load_from_json(storage_filepath)
 
 while program_running
     puts ""
-    menu_selection = prompt.select("Menu selection".bold, ["Add task/s", "Delete task/s", "Mark as complete",
+    menu_selection = prompt.select("MAIN MENU".bold, ["Add task/s", "Delete task/s", "Mark as complete",
                                                            "See schedule", "Clear schedule", "Quit"])
     case menu_selection
 
     when "Add task/s"
         anymore_tasks = true
         while anymore_tasks
-            description = prompt.ask("Enter task description.\n>>", required: true, max: 10)
+            begin
+                description = prompt.ask("Enter task description.\n>>", required: true)
+                raise StandardError if description.length > 50
+            rescue StandardError
+                puts "Invalid input. Task decsription must be less than 50 characters."
+                retry
+            end
             importance = prompt.select("How important is this task?", ["Low", "Medium", "High", "Very high"])
             due = prompt.select("When is this task due?", %w[Morning Midday Afternoon Evening])
             task = Task.new(description, importance, due, false)
@@ -53,6 +59,8 @@ while program_running
     when "Mark as complete"
         if schedule.task_list.empty?
             puts "#{'>>'.red} You currently have no tasks."
+        elsif schedule.all_tasks_complete?
+            puts "#{'>>'.red} All tasks have been completed."
         else
             completed_tasks = prompt.multi_select("Select task/s you've completed.",
                                                   schedule.task_descriptions_completed)
@@ -61,6 +69,11 @@ while program_running
             else
                 schedule.mark_tasks_as_complete(completed_tasks)
                 puts "Well done for completing #{completed_tasks.length} task/s."
+            end
+
+            if schedule.all_tasks_complete?
+                puts ""
+                puts font.write("All  finished!").yellow
             end
         end
 

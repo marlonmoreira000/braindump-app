@@ -94,4 +94,11 @@ class Schedule
             end
         end
     end
+
+    def all_tasks_complete?
+        @task_list.each do |task|
+            return false if task.is_complete == false
+        end
+        return true
+    end
 end

@@ -1,6 +1,6 @@
-# this module contains functions used in the dayplanner app
 require "tty-font"
 
+# this module contains functions used in the dayplanner app
 module Functions
     def self.print_add_confirmation(task_object)
         puts ""
@@ -17,14 +17,16 @@ module Functions
         puts ""
         title = font.write("braindump.").yellow
         brain = "
-                         _.-'-'--._
-                       ,', ~'` ( .'`.
-                      ( ~'_ , .'(  >-)
-                     ( .-' (  `__.-<  )
-                      ( `-..--'_   .-')
-                       `(_( (-' `-'.-)
-                           `-.__.-'=/
-                              `._`='\n".magenta
+                       _---~~(~~-_.
+                     _{        )   )
+                   ,   ) -~~- ( ,-' )_
+                  (  `-,_..`., )-- '_,)
+                 ( ` _)  (  -~( -_ `,  }
+                 (_-  _  ~_-~~~~`,  ,' )
+                   `~ -^(    __;-,((()))
+                         ~~~~ {_ -_(())
+                                `\\  }
+                                  { }\n".magenta
         print "#{brain}#{title}"
         puts ""
     end

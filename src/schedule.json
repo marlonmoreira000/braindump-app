@@ -3,41 +3,41 @@
     "description": "beach",
     "importance": "Low",
     "due": "Morning",
-    "is_complete": false
+    "is_complete": true
   },
   {
     "description": "dogs",
     "importance": "Medium",
-    "due": "Midday",
-    "is_complete": true
-  },
-  {
-    "description": "home",
-    "importance": "Low",
-    "due": "Evening",
-    "is_complete": true
-  },
-  {
-    "description": "jones",
-    "importance": "High",
-    "due": "Midday",
-    "is_complete": false
-  },
-  {
-    "description": "due",
-    "importance": "Medium",
     "due": "Afternoon",
-    "is_complete": false
+    "is_complete": true
   },
   {
-    "description": "teeth",
+    "description": "god",
     "importance": "Low",
-    "due": "Evening",
-    "is_complete": false
+    "due": "Morning",
+    "is_complete": true
   },
   {
-    "description": "abc",
-    "importance": "High",
+    "description": "gerd",
+    "importance": "Low",
+    "due": "Morning",
+    "is_complete": true
+  },
+  {
+    "description": "foo",
+    "importance": "Low",
+    "due": "Morning",
+    "is_complete": true
+  },
+  {
+    "description": "goo",
+    "importance": "Low",
+    "due": "Morning",
+    "is_complete": true
+  },
+  {
+    "description": "hello",
+    "importance": "Low",
     "due": "Morning",
     "is_complete": false
   }
