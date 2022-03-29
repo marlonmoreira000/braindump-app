@@ -27,12 +27,15 @@ class Schedule
 
     def load_from_json(filepath)
         if File.file?('./schedule.json')
+            # populate schedule with tasks from json file
             data = JSON.load_file(filepath, symbolize_names: true)
             data.each do |item|
+                # create a Task class for each json entry
                 task = Task.new(item[:description], item[:importance], item[:due])
                 @task_list.append(task)
             end
         else
+            # create a json file if there is none
             File.write("schedule.json", 'w') { |file| file.write("[]") }
         end
     end
@@ -49,17 +52,17 @@ class Schedule
     end
 
     def table_rows
-        table_rows = []
+        table_rows_list = []
         task_list_sorted = @task_list.sort_by { |task| [task.due_score, task.importance_score] }.reverse
         task_list_sorted.each do |task|
-            row = [task.description, task.importance, task.due]
-            table_rows.append(row)
+            row = [task.description, task.importance, task.due, task.status_colorized]
+            table_rows_list.append(row)
         end
-        return table_rows
+        return table_rows_list
     end
 
     def show_table
-        headers = ["Task Description".bold, "Importance".bold, "Due".bold]
+        headers = ["Task Description".bold, "Importance".bold, "Due".bold, "Status".bold]
         rows = table_rows
         table = TTY::Table.new(header: headers, rows: rows)
         puts ""
@@ -69,5 +72,9 @@ class Schedule
 
     def delete_all_tasks
         @task_list = []
+    end
+
+    def show_tasklist
+        pp @task_list
     end
 end

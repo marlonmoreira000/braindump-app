@@ -1,37 +1,27 @@
 [
   {
-    "description": "get the dog washed",
-    "importance": "Low",
-    "due": "Morning"
-  },
-  {
-    "description": "brush my teeth",
+    "description": "dinner",
     "importance": "Medium",
-    "due": "Morning"
-  },
-  {
-    "description": "love my wife",
-    "importance": "Very high",
     "due": "Afternoon"
   },
   {
-    "description": "cook dinner",
-    "importance": "High",
+    "description": "wife time",
+    "importance": "Very high",
     "due": "Evening"
   },
   {
-    "description": "finish assignment",
-    "importance": "High",
-    "due": "Evening"
+    "description": "god time",
+    "importance": "Very high",
+    "due": "Midday"
   },
   {
-    "description": "eat",
-    "importance": "Low",
-    "due": "Evening"
+    "description": "teeth",
+    "importance": "High",
+    "due": "Morning"
   },
   {
-    "description": "ass",
-    "importance": "High",
+    "description": "squash",
+    "importance": "Medium",
     "due": "Morning"
   }
 ]
