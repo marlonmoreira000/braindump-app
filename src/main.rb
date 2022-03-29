@@ -17,7 +17,7 @@ storage_filepath = './schedule.json'
 # MAIN PROGRAM
 program_running = true
 puts ""
-puts font.write("dayplanner")
+puts font.write("braindump.")
 puts ""
 schedule = Schedule.new
 schedule.load_from_json(storage_filepath)

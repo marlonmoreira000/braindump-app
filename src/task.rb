@@ -11,5 +11,6 @@ class Task
         @importance_score = @@importances[@importance]
         @due = due
         @due_score = @@dues[@due]
+        # @is_complete = false
     end
 end
