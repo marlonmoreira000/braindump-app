@@ -24,12 +24,12 @@ schedule.load_from_json(storage_filepath)
 
 while program_running
     puts ""
-    menu_selection = prompt.select("Menu selection".bold, ["Add task", "Delete task", "See schedule",
+    menu_selection = prompt.select("Menu selection".bold, ["Add task/s", "Delete task/s", "Mark as complete", "See schedule",
                                                       "Clear schedule", "Quit"])
 
     case menu_selection
 
-    when "Add task"
+    when "Add task/s"
         anymore_tasks = true
         while anymore_tasks
             # get task information from user
@@ -37,7 +37,7 @@ while program_running
             importance = prompt.select("How important is this task?", ["Low", "Medium", "High", "Very high"])
             due = prompt.select("When is this task due?", %w[Morning Midday Afternoon Evening])
             # create task object
-            task = Task.new(description, importance, due)
+            task = Task.new(description, importance, due, false)
             # add task to schedule
             schedule.add_task(task)
             # print confirmation msg
@@ -46,7 +46,7 @@ while program_running
             anymore_tasks = prompt.yes?("Do you have another tasks to do today?")
         end
 
-    when "Delete task"
+    when "Delete task/s"
         if schedule.task_list.empty?
             puts "#{'>>'.red} You currently have no tasks."
         else
@@ -59,6 +59,19 @@ while program_running
                     schedule.delete_tasks(tasks_to_delete)
                     puts "You deleted #{tasks_to_delete.length} task/s."
                 end
+            end
+        end
+
+    when "Mark as complete"
+        if schedule.task_list.empty?
+            puts "#{'>>'.red} You currently have no tasks."
+        else
+            completed_tasks = prompt.multi_select("Select task/s you've completed.", schedule.task_descriptions_completed)
+            if completed_tasks.empty?
+                puts "#{'>>'.red} No tasks were selected."
+            else
+                schedule.mark_tasks_as_complete(completed_tasks)
+                puts "Well done for completing #{completed_tasks.length} task/s."
             end
         end
 

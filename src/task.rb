@@ -7,13 +7,17 @@ class Task
     @@importances = { "Low" => 1, "Medium" => 2, "High" => 3, "Very high" => 4 }
     @@dues = { "Evening" => 1, "Afternoon" => 2, "Midday" => 3, "Morning" => 4 }
 
-    def initialize(description, importance, due)
+    def initialize(description, importance, due, is_complete)
         @description = description
         @importance = importance
         @importance_score = @@importances[@importance]
         @due = due
         @due_score = @@dues[@due]
-        @is_complete = false
+        @is_complete = is_complete
+    end
+
+    def mark_as_complete
+        @is_complete = true
     end
 
     def status_colorized

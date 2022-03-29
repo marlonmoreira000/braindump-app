@@ -21,6 +21,14 @@ class Schedule
         return task_descriptions
     end
 
+    def task_descriptions_completed
+        task_descriptions = []
+        @task_list.each do |task|
+            task_descriptions.append(task.description) unless task.is_complete
+        end
+        return task_descriptions
+    end
+
     def delete_tasks(tasks_to_delete_arr)
         @task_list.delete_if { |task_object| tasks_to_delete_arr.include?(task_object.description) }
     end
@@ -31,7 +39,7 @@ class Schedule
             data = JSON.load_file(filepath, symbolize_names: true)
             data.each do |item|
                 # create a Task class for each json entry
-                task = Task.new(item[:description], item[:importance], item[:due])
+                task = Task.new(item[:description], item[:importance], item[:due], item[:is_complete])
                 @task_list.append(task)
             end
         else
@@ -44,7 +52,8 @@ class Schedule
         updated_data = []
         # create a json entry for each task object in task list
         @task_list.each do |task|
-            task_hash = { description: task.description, importance: task.importance, due: task.due }
+            task_hash = { description: task.description, importance: task.importance, due: task.due,
+                          is_complete: task.is_complete }
             updated_data.append(task_hash)
         end
         # update task data in storage
@@ -76,5 +85,13 @@ class Schedule
 
     def show_tasklist
         pp @task_list
+    end
+
+    def mark_tasks_as_complete(tasks_arr)
+        @task_list.each do |task_obj|
+            if tasks_arr.include?(task_obj.description)
+                task_obj.mark_as_complete
+            end
+        end
     end
 end
