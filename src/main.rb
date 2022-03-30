@@ -29,7 +29,7 @@ while program_running
                 description = prompt.ask("Enter task description.\n>>", required: true)
                 raise StandardError if description.length > 50
             rescue StandardError
-                puts "Invalid input. Task decsription must be less than 50 characters."
+                puts "#{'>>'.red} Invalid input. Task decsription must be less than 50 characters."
                 retry
             end
             importance = prompt.select("How important is this task?", ["Low", "Medium", "High", "Very high"])
@@ -51,7 +51,7 @@ while program_running
                 confirm_delete = prompt.yes?("Are you sure you want to delete this task/s?")
                 if confirm_delete
                     schedule.delete_tasks(tasks_to_delete)
-                    puts "You deleted #{tasks_to_delete.length} task/s."
+                    puts "#{'>>'.red} You deleted #{tasks_to_delete.length} task/s."
                 end
             end
         end
@@ -68,7 +68,7 @@ while program_running
                 puts "#{'>>'.red} No tasks were selected."
             else
                 schedule.mark_tasks_as_complete(completed_tasks)
-                puts "Well done for completing #{completed_tasks.length} task/s."
+                puts "#{'>>'.red} You comleted #{completed_tasks.length} task/s."
             end
 
             if schedule.all_tasks_complete?
@@ -91,7 +91,7 @@ while program_running
             confirm_delete = prompt.yes?("Are you sure you want to delete all tasks?")
             if confirm_delete
                 schedule.delete_all_tasks
-                puts "You deleted all tasks."
+                puts "#{'>>'.red} You deleted all tasks."
             end
         end
 
@@ -102,6 +102,6 @@ while program_running
         schedule.update_storage(storage_filepath)
 
     else
-        puts "i'm not sure how you arrived here but i'm scared."
+        puts "#{'>>'.red} I'm not sure how you arrived here but i'm scared :("
     end
 end
