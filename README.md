@@ -1,6 +1,6 @@
 ## Description
 
-Do you ever struggle to manage your daily schedule? Ever wonder which tasks to do first, and which ones to save for later? This CLI that lets you add your daily tasks in the morning, and then tells you which order you should do them. It plans your day, so that you don't have to.
+Do you ever struggle to manage your daily schedule? Ever wonder which tasks to do first, and which ones to save for later? This CLI app lets you add your daily tasks in the morning, and then tells you which order you should do them. It plans your day, so that you don't have to.
 
 ## Resources
 
