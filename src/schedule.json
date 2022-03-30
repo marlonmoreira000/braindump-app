@@ -1,43 +1,55 @@
 [
   {
-    "description": "beach",
-    "importance": "Low",
-    "due": "Morning",
-    "is_complete": true
-  },
-  {
-    "description": "dogs",
+    "description": "go for a run",
     "importance": "Medium",
+    "due": "Morning",
+    "is_complete": false
+  },
+  {
+    "description": "take multivitamins",
+    "importance": "Medium",
+    "due": "Morning",
+    "is_complete": false
+  },
+  {
+    "description": "make the bed",
+    "importance": "Low",
+    "due": "Morning",
+    "is_complete": false
+  },
+  {
+    "description": "call sam",
+    "importance": "Medium",
+    "due": "Midday",
+    "is_complete": false
+  },
+  {
+    "description": "make lunch",
+    "importance": "Low",
+    "due": "Midday",
+    "is_complete": false
+  },
+  {
+    "description": "send email to bill",
+    "importance": "Very high",
     "due": "Afternoon",
-    "is_complete": true
+    "is_complete": false
   },
   {
-    "description": "god",
-    "importance": "Low",
-    "due": "Morning",
-    "is_complete": true
+    "description": "finish assignment",
+    "importance": "Very high",
+    "due": "Evening",
+    "is_complete": false
   },
   {
-    "description": "gerd",
-    "importance": "Low",
-    "due": "Morning",
-    "is_complete": true
+    "description": "make dinner",
+    "importance": "High",
+    "due": "Evening",
+    "is_complete": false
   },
   {
-    "description": "foo",
-    "importance": "Low",
-    "due": "Morning",
-    "is_complete": true
-  },
-  {
-    "description": "goo",
-    "importance": "Low",
-    "due": "Morning",
-    "is_complete": true
-  },
-  {
-    "description": "hello",
-    "importance": "Low",
+    "description": "brush teeth",
+    "importance": "High",
     "due": "Morning",
     "is_complete": false
   }
