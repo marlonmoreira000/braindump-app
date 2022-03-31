@@ -7,13 +7,15 @@ module Functions
     # get the main menu selection from user
     def self.main_menu_selection
         prompt = TTY::Prompt.new
-        puts ""
-        menu_selection = prompt.select("#{'MAIN MENU'.bold} #{'[user: marlon]'.black}", ["Add task/s",
-                                                                                         "Delete task/s",
-                                                                                         "Mark as complete",
-                                                                                         "See schedule",
-                                                                                         "Clear schedule",
-                                                                                         "Quit"], show_help: :never)
+        username = ARGV[0] || 'guest'
+        username_display = "[user: #{username}]".black
+        menu_title = "MAIN MENU".bold
+        menu_selection = prompt.select("#{menu_title} #{username_display}", ["Add task/s",
+                                                                             "Delete task/s",
+                                                                             "Mark as complete",
+                                                                             "See schedule",
+                                                                             "Clear schedule",
+                                                                             "Quit"], show_help: :never)
         return menu_selection
     end
 
