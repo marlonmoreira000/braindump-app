@@ -10,6 +10,7 @@ module Functions
         username = ARGV[0] || 'guest'
         username_display = "[user: #{username}]".black
         menu_title = "MAIN MENU".bold
+        puts ""
         menu_selection = prompt.select("#{menu_title} #{username_display}", ["Add task/s",
                                                                              "Delete task/s",
                                                                              "Mark as complete",
