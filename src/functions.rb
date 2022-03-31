@@ -8,7 +8,7 @@ module Functions
     def self.main_menu_selection
         prompt = TTY::Prompt.new
         username = ARGV[0] || 'guest'
-        username_display = "[user: #{username}]".black
+        username_display = "[user: #{username}]".light_black
         menu_title = "MAIN MENU".bold
         puts ""
         menu_selection = prompt.select("#{menu_title} #{username_display}", ["Add task/s",
