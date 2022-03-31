@@ -1,8 +1,33 @@
 require "tty-font"
 require "colorize"
+require "tty-prompt"
 
 # this module contains functions used in the dayplanner app
 module Functions
+    def self.description
+        prompt = TTY::Prompt.new
+        begin
+            description = prompt.ask("Enter task description.\n>>", required: true)
+            raise StandardError if description.length > 50
+        rescue StandardError
+            puts "#{'>>'.red} Invalid input. Task decsription must be less than 50 characters."
+            retry
+        end
+        return description
+    end
+
+    def self.importance
+        prompt = TTY::Prompt.new
+        importance = prompt.select("How important is this task?", ["Low", "Medium", "High", "Very high"])
+        return importance
+    end
+
+    def self.due_time
+        prompt = TTY::Prompt.new
+        due = prompt.select("When is this task due?", %w[Morning Midday Afternoon Evening])
+        return due
+    end
+
     def self.print_add_confirmation(task_object)
         puts ""
         puts "Task added".green

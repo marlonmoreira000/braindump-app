@@ -20,21 +20,17 @@ begin
     while program_running
         puts ""
         menu_selection = prompt.select("MAIN MENU".bold, ["Add task/s", "Delete task/s", "Mark as complete",
-                                                            "See schedule", "Clear schedule", "Quit"])
+                                                          "See schedule", "Clear schedule", "Quit"])
         case menu_selection
 
         when "Add task/s"
             anymore_tasks = true
             while anymore_tasks
-                begin
-                    description = prompt.ask("Enter task description.\n>>", required: true)
-                    raise StandardError if description.length > 50
-                rescue StandardError
-                    puts "#{'>>'.red} Invalid input. Task decsription must be less than 50 characters."
-                    retry
-                end
-                importance = prompt.select("How important is this task?", ["Low", "Medium", "High", "Very high"])
-                due = prompt.select("When is this task due?", %w[Morning Midday Afternoon Evening])
+                # I did have manual error handling for the following user input but I realised tty-prompt
+                #  has it inbuild alredy, so I removed mine. I confirmed this was ok with Matt.
+                description = Functions.description
+                importance = Functions.importance
+                due = Functions.due_time
                 task = Task.new(description, importance, due, false)
                 schedule.add_task(task)
                 Functions.print_add_confirmation(task)
