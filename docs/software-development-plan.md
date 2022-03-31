@@ -40,10 +40,6 @@ User's daily tasks are sorted, based on when they are due, and how important the
 
 Users can clear their entire schedule anytime, allowing them to start fresh every day.
 
-#### Feature 3: User customisation
-
-Users are able to add their name as an argument on the command line, which personalises user experience in the app by displaying their name in the menu.
-
 ## 3. User Interaction and Experience
 
 #### How the user will find out how to interact with/use each feature?
@@ -52,7 +48,7 @@ The user will be given a simple menu, and easy-to-understand prompts throughout 
 
 #### How the user will interact with/use each feature?
 
-The users will interact with the program via their keyboard only. They will be required to provide various input, such as text input for task descriptions, and numeric input for task importance codes.
+The users will interact with the program via their keyboard only. They will be required to provide various input, such as text input for task descriptions, and navigating menus with the arrow keys.
 
 #### How errors will be handled by the application and displayed to the user?
 
