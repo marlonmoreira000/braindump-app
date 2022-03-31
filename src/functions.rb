@@ -31,12 +31,6 @@ module Functions
         return due
     end
 
-    def self.choose_tasks_to_delete
-        prompt = TTY::Prompt.new
-        tasks_to_delete = prompt.multi_select("Select task/s to delete.", schedule.task_descriptions)
-        return tasks_to_delete
-    end
-
     def self.print_add_confirmation(task_object)
         puts ""
         puts "Task added".green

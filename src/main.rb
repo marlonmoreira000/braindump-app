@@ -41,7 +41,7 @@ begin
             if schedule.task_list.empty?
                 puts "#{'>>'.red} You currently have no tasks."
             else
-                tasks_to_delete = Functions.choose_tasks_to_delete
+                tasks_to_delete = prompt.multi_select("Select task/s to delete.", schedule.task_descriptions)
                 if tasks_to_delete.empty?
                     puts "#{'>>'.red} No tasks were deleted."
                 else
@@ -60,14 +60,13 @@ begin
                 puts "#{'>>'.red} All tasks have been completed."
             else
                 completed_tasks = prompt.multi_select("Select task/s you've completed.",
-                                                    schedule.task_descriptions_completed)
+                                                      schedule.task_descriptions_completed)
                 if completed_tasks.empty?
                     puts "#{'>>'.red} No tasks were selected."
                 else
                     schedule.mark_tasks_as_complete(completed_tasks)
                     puts "#{'>>'.red} You comleted #{completed_tasks.length} task/s."
                 end
-
                 if schedule.all_tasks_complete?
                     puts ""
                     puts font.write("All  finished!").yellow
