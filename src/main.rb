@@ -28,9 +28,9 @@ begin
             while anymore_tasks
                 # I did have manual error handling for the following user input but I realised tty-prompt
                 #  has it inbuild alredy, so I removed mine. I confirmed this was ok with Matt.
-                description = Functions.description
-                importance = Functions.importance
-                due = Functions.due_time
+                description = Functions.input_task_description
+                importance = Functions.input_task_importance
+                due = Functions.input_task_due_time
                 task = Task.new(description, importance, due, false)
                 schedule.add_task(task)
                 Functions.print_add_confirmation(task)
@@ -41,7 +41,7 @@ begin
             if schedule.task_list.empty?
                 puts "#{'>>'.red} You currently have no tasks."
             else
-                tasks_to_delete = prompt.multi_select("Select task/s to delete.", schedule.task_descriptions)
+                tasks_to_delete = Functions.choose_tasks_to_delete
                 if tasks_to_delete.empty?
                     puts "#{'>>'.red} No tasks were deleted."
                 else

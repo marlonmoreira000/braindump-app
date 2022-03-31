@@ -4,28 +4,37 @@ require "tty-prompt"
 
 # this module contains functions used in the dayplanner app
 module Functions
-    def self.description
+    class InputTooLongError < StandardError
+    end
+
+    def self.input_task_description
         prompt = TTY::Prompt.new
         begin
             description = prompt.ask("Enter task description.\n>>", required: true)
-            raise StandardError if description.length > 50
-        rescue StandardError
+            raise InputTooLongError if description.length > 50
+        rescue InputTooLongError
             puts "#{'>>'.red} Invalid input. Task decsription must be less than 50 characters."
             retry
         end
         return description
     end
 
-    def self.importance
+    def self.input_task_importance
         prompt = TTY::Prompt.new
         importance = prompt.select("How important is this task?", ["Low", "Medium", "High", "Very high"])
         return importance
     end
 
-    def self.due_time
+    def self.input_task_due_time
         prompt = TTY::Prompt.new
         due = prompt.select("When is this task due?", %w[Morning Midday Afternoon Evening])
         return due
+    end
+
+    def self.choose_tasks_to_delete
+        prompt = TTY::Prompt.new
+        tasks_to_delete = prompt.multi_select("Select task/s to delete.", schedule.task_descriptions)
+        return tasks_to_delete
     end
 
     def self.print_add_confirmation(task_object)
