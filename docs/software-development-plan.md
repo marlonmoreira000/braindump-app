@@ -1,7 +1,5 @@
 # Software Development Plan
 
----
-
 ## 1. Statement of Purpose and Scope
 
 #### What will this application do?
