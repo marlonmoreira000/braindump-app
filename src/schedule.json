@@ -3,7 +3,7 @@
     "description": "go for a run",
     "importance": "Medium",
     "due": "Morning",
-    "is_complete": false
+    "is_complete": true
   },
   {
     "description": "take multivitamins",
@@ -15,7 +15,7 @@
     "description": "make the bed",
     "importance": "Low",
     "due": "Morning",
-    "is_complete": false
+    "is_complete": true
   },
   {
     "description": "call sam",
@@ -51,6 +51,6 @@
     "description": "brush teeth",
     "importance": "High",
     "due": "Morning",
-    "is_complete": false
+    "is_complete": true
   }
 ]

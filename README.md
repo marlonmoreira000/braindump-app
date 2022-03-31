@@ -1,3 +1,5 @@
+![welcome-screen](docs/screenshots/welcome-screen.png)
+
 ## Description
 
 Do you ever struggle to manage your daily schedule? Ever wonder which tasks to do first, and which ones to save for later? This CLI app lets you add your daily tasks in the morning, and then tells you which order you should do them. It plans your day, so that you don't have to.
@@ -30,7 +32,11 @@ User's daily tasks are sorted, based on when they are due, and how important the
 
 Users can clear their entire schedule anytime, allowing them to start fresh every day.
 
-## **How to Install and Run**
+## Screenshots
+
+![schedule-table](docs/screenshots/schedule-table.png)
+
+## How to Install and Run
 
 1. [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/) if you do not have it.
 2. Clone the Braindump project from the [source code](https://github.com/marlonmoreira000/scheduler-app).
