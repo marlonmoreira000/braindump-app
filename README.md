@@ -17,7 +17,7 @@ Do you ever struggle to manage your daily schedule? Ever wonder which tasks to d
 ## How to Install and Run
 
 1. [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/) if you do not have it.
-2. Clone the Braindump project from the [source code](https://github.com/marlonmoreira000/braindump-app/tree/master/src)
+2. Clone the Braindump project from the [source code](https://github.com/marlonmoreira000/braindump-app)
    
 ```
 $ git clone https://github.com/marlonmoreira000/braindump-app.git
