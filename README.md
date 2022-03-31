@@ -8,6 +8,7 @@ Do you ever struggle to manage your daily schedule? Ever wonder which tasks to d
 
 - [Source Code](https://github.com/marlonmoreira000/scheduler-app/tree/master/src)
 - [Documentation](https://github.com/marlonmoreira000/scheduler-app/tree/master/docs)
+- [Unit Tests (RSpec)](https://github.com/marlonmoreira000/scheduler-app/tree/master/spec)
 
 ## App features
 
