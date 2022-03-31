@@ -40,8 +40,18 @@ Users can clear their entire schedule anytime, allowing them to start fresh ever
 ## How to Install and Run
 
 1. [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/) if you do not have it.
-2. Clone the Braindump project from the [source code](https://github.com/marlonmoreira000/scheduler-app).
+2. Clone the Braindump project from the [source code](https://github.com/marlonmoreira000/scheduler-app)
+   
+```
+$ git clone https://github.com/marlonmoreira000/braindump-app.git
+```
+
 3. In your terminal, change directory into the root folder of the project repo you just cloned.
+
+```
+$ cd braindump-app
+```
+
 4. Install the Ruby gem `bundler` if you do not have it
 
 ```
