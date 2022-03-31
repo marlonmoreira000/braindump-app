@@ -10,29 +10,6 @@ Do you ever struggle to manage your daily schedule? Ever wonder which tasks to d
 - [Documentation](https://github.com/marlonmoreira000/scheduler-app/tree/master/docs)
 - [Unit Tests](https://github.com/marlonmoreira000/scheduler-app/tree/master/spec)
 
-## App features
-
-#### 1. Add tasks
-
-Users can add as many tasks as they want to their schedule. To add a task, users must provide a task description, and tell the app when it is due, and how important it is. 
-
-#### 2. Delete tasks
-
-Users can delete one or more tasks from their schedule.
-They need to confirm that they want to delete, before deletion. 
-
-#### 3. Mark tasks as complete
-
-Users can mark one or more tasks for completion. This will be shown in the schedule as 'complete' (in green text).
-
-#### 4. See schedule
-
-User's daily tasks are sorted, based on when they are due, and how important they are. This makes sure that the most important tasks are completed first. The schedule also colors tasks according to their status, 'complete' (in green) or 'incomplete' in red.
-
-#### 5. Clear schedule
-
-Users can clear their entire schedule anytime, allowing them to start fresh every day.
-
 ## Screenshots
 
 ![schedule-table](docs/screenshots/schedule-table.png)

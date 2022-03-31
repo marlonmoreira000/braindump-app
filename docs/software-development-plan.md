@@ -16,17 +16,29 @@ We all know that planning your day can be time consuming and tricky, especially 
 
 Anyone looking to save a bit of time and boost their productivity.
 
-#### How will the target audience use this application?
 
-## 2. Features
+## 2. App features
 
-#### Feature 1: Adding and deleting tasks
+#### 1. Add tasks
 
-Users can add and delete tasks anytime. These will be added to their daily schedule.
+Users can add as many tasks as they want to their schedule. To add a task, users must provide a task description, and tell the app when it is due, and how important it is. 
 
-#### Feature 2: Sorting your schedule for you
+#### 2. Delete tasks
 
-The app sorts (and color codes) daily tasks based on their importance and when they are due form completion. This takes the thinking out of planning your day.
+Users can delete one or more tasks from their schedule.
+They need to confirm that they want to delete, before deletion. 
+
+#### 3. Mark tasks as complete
+
+Users can mark one or more tasks for completion. This will be shown in the schedule as 'complete' (in green text).
+
+#### 4. See schedule
+
+User's daily tasks are sorted, based on when they are due, and how important they are. This makes sure that the most important tasks are completed first. The schedule also colors tasks according to their status, 'complete' (in green) or 'incomplete' in red.
+
+#### 5. Clear schedule
+
+Users can clear their entire schedule anytime, allowing them to start fresh every day.
 
 #### Feature 3: User customisation
 
