@@ -17,6 +17,7 @@ begin
     schedule = Schedule.new
     schedule.load_from_json(storage_filepath)
 
+    # keep running the app until the user selects 'Quit'
     while program_running
         puts ""
         menu_selection = prompt.select("MAIN MENU".bold, ["Add task/s", "Delete task/s", "Mark as complete",
@@ -101,6 +102,7 @@ begin
             puts "#{'>>'.red} I'm not sure how you arrived here but i'm scared :("
         end
     end
+# Handle error is someone exits the program using ctrl+c
 rescue TTY::Reader::InputInterrupt => e
     puts ""
     puts "Error (#{e.message.red}): program unexpectedly exited".red

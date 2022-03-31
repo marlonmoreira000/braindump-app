@@ -4,9 +4,11 @@ require "tty-prompt"
 
 # this module contains functions used in the dayplanner app
 module Functions
+    # custom error to be raised if task description is too long
     class InputTooLongError < StandardError
     end
 
+    # get task description from user
     def self.input_task_description
         prompt = TTY::Prompt.new
         begin
@@ -19,18 +21,21 @@ module Functions
         return description
     end
 
+    # get task importance from user
     def self.input_task_importance
         prompt = TTY::Prompt.new
         importance = prompt.select("How important is this task?", ["Low", "Medium", "High", "Very high"])
         return importance
     end
 
+    # get task due time from user
     def self.input_task_due_time
         prompt = TTY::Prompt.new
         due = prompt.select("When is this task due?", %w[Morning Midday Afternoon Evening])
         return due
     end
 
+    # print confirmation message when user adds a task
     def self.print_add_confirmation(task_object)
         puts ""
         puts "Task added".green
@@ -40,6 +45,7 @@ module Functions
         puts ""
     end
 
+    # print welcome screen when user opens app
     def self.print_welcome_screen
         font = TTY::Font.new(:doom)
         puts ""
