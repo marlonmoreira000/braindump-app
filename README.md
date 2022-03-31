@@ -6,9 +6,9 @@ Do you ever struggle to manage your daily schedule? Ever wonder which tasks to d
 
 ## Resources
 
-- [Source Code](https://github.com/marlonmoreira000/scheduler-app/tree/master/src)
-- [Documentation](https://github.com/marlonmoreira000/scheduler-app/tree/master/docs)
-- [Unit Tests](https://github.com/marlonmoreira000/scheduler-app/tree/master/spec)
+- [Source Code](https://github.com/marlonmoreira000/braindump-app/tree/master/src)
+- [Documentation](https://github.com/marlonmoreira000/braindump-app/tree/master/docs)
+- [Unit Tests](https://github.com/marlonmoreira000/braindump-app/tree/master/spec)
 
 ## Screenshots
 
@@ -17,7 +17,7 @@ Do you ever struggle to manage your daily schedule? Ever wonder which tasks to d
 ## How to Install and Run
 
 1. [Install Ruby](https://www.ruby-lang.org/en/documentation/installation/) if you do not have it.
-2. Clone the Braindump project from the [source code](https://github.com/marlonmoreira000/scheduler-app)
+2. Clone the Braindump project from the [source code](https://github.com/marlonmoreira000/braindump-app/tree/master/src)
    
 ```
 $ git clone https://github.com/marlonmoreira000/braindump-app.git
@@ -62,11 +62,11 @@ Your username will be displayed inside the app while it is running. Default user
 
 ##  System Requirements
 
-This app can be run on all major operating systems. See [Gemfile](https://github.com/marlonmoreira000/scheduler-app/blob/master/Gemfile) for required Ruby gems.
+This app can be run on all major operating systems. See [Gemfile](https://github.com/marlonmoreira000/braindump-app/blob/master/Gemfile) for required Ruby gems.
 
 ## Testing
 
-Unit tests were done using RSpec. Multiple unit tests were done for each class in the program. They can be accessed [here](https://github.com/marlonmoreira000/scheduler-app/tree/master/spec).
+Unit tests were done using RSpec. Multiple unit tests were done for each class in the program. They can be accessed [here](https://github.com/marlonmoreira000/braindump-app/tree/master/spec).
 
 ## Techniques 
 
