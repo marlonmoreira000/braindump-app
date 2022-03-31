@@ -19,9 +19,7 @@ begin
 
     # keep running the app until the user selects 'Quit'
     while program_running
-        puts ""
-        menu_selection = prompt.select("MAIN MENU".bold, ["Add task/s", "Delete task/s", "Mark as complete",
-                                                          "See schedule", "Clear schedule", "Quit"])
+        menu_selection = Functions.main_menu_selection
         case menu_selection
 
         when "Add task/s"
@@ -40,11 +38,11 @@ begin
 
         when "Delete task/s"
             if schedule.task_list.empty?
-                puts "#{'>>'.red} You currently have no tasks."
+                Functions.print_msg("You currently have no tasks.")
             else
                 tasks_to_delete = prompt.multi_select("Select task/s to delete.", schedule.task_descriptions)
                 if tasks_to_delete.empty?
-                    puts "#{'>>'.red} No tasks were deleted."
+                    Functions.print_msg("No tasks were deleted.")
                 else
                     confirm_delete = prompt.yes?("Are you sure you want to delete this task/s?")
                     if confirm_delete
@@ -56,14 +54,14 @@ begin
 
         when "Mark as complete"
             if schedule.task_list.empty?
-                puts "#{'>>'.red} You currently have no tasks."
+                Functions.print_msg("You currently have no tasks.")
             elsif schedule.all_tasks_complete?
-                puts "#{'>>'.red} All tasks have been completed."
+                Functions.print_msg("All tasks have been completed.")
             else
                 completed_tasks = prompt.multi_select("Select task/s you've completed.",
                                                       schedule.task_descriptions_completed)
                 if completed_tasks.empty?
-                    puts "#{'>>'.red} No tasks were selected."
+                    Functions.print_msg("No tasks were selected.")
                 else
                     schedule.mark_tasks_as_complete(completed_tasks)
                     puts "#{'>>'.red} You comleted #{completed_tasks.length} task/s."
@@ -76,19 +74,19 @@ begin
 
         when "See schedule"
             if schedule.task_list.empty?
-                puts "#{'>>'.red} You currently have no tasks."
+                Functions.print_msg("You currently have no tasks.")
             else
                 schedule.show_table
             end
 
         when "Clear schedule"
             if schedule.task_list.empty?
-                puts "#{'>>'.red} You currently have no tasks."
+                Functions.print_msg("You currently have no tasks.")
             else
                 confirm_delete = prompt.yes?("Are you sure you want to delete all tasks?")
                 if confirm_delete
                     schedule.delete_all_tasks
-                    puts "#{'>>'.red} You deleted all tasks."
+                    Functions.print_msg("You deleted all tasks.")
                 end
             end
 
@@ -99,7 +97,7 @@ begin
             schedule.update_storage(storage_filepath)
 
         else
-            puts "#{'>>'.red} I'm not sure how you arrived here but i'm scared :("
+            puts Functions.print_msg("Not sure how you got here but i'm scared :(")
         end
     end
 # Handle error is someone exits the program using ctrl+c

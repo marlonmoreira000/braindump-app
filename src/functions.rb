@@ -4,6 +4,24 @@ require "tty-prompt"
 
 # this module contains functions used in the dayplanner app
 module Functions
+    # get the main menu selection from user
+    def self.main_menu_selection
+        prompt = TTY::Prompt.new
+        puts ""
+        menu_selection = prompt.select("#{'MAIN MENU'.bold} #{'[user: marlon]'.black}", ["Add task/s",
+                                                                                         "Delete task/s",
+                                                                                         "Mark as complete",
+                                                                                         "See schedule",
+                                                                                         "Clear schedule",
+                                                                                         "Quit"], show_help: :never)
+        return menu_selection
+    end
+
+    # generic functions for printing messages for user feedback
+    def self.print_msg(msg_string)
+        puts "#{'>>'.red} #{msg_string}"
+    end
+
     # custom error to be raised if task description is too long
     class InputTooLongError < StandardError
     end
