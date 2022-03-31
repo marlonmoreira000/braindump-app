@@ -1,7 +1,7 @@
 require "./src/task"
 
 describe Task do
-    let(:task) { Task.new("do resume", 1, 2) }
+    let(:task) { Task.new("do resume", 1, 2, false) }
 
     context "* general requirements" do
         it "can be instantiated" do

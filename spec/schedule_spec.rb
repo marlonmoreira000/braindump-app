@@ -2,7 +2,7 @@ require "./src/task"
 require "./src/schedule"
 
 describe Schedule do
-    let(:schedule1) { Schedule.new([Task.new("do resume", 1, 2)]) }
+    let(:schedule1) { Schedule.new([Task.new("do resume", 1, 2, false)]) }
     let(:schedule2) { Schedule.new }
 
     context "* general requirements" do
@@ -20,7 +20,7 @@ describe Schedule do
             expect(schedule1.task_descriptions).to eq ["do resume"]
         end
         it "delete method returns correct values" do
-            schedule1.delete(["do resume"])
+            schedule1.delete_tasks(["do resume"])
             expect(schedule1.task_list).to eq []
         end
     end
