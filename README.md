@@ -1,14 +1,15 @@
 ![welcome-screen](docs/screenshots/welcome-screen.png)
 
+## Links
+
+- [Demo video](https://www.linkedin.com/posts/marlonmoreira_i-made-an-app-to-plan-my-day-for-me-it-sorts-activity-6915483716635033600-DBCF/?utm_source=linkedin_share&utm_medium=member_desktop_web)
+- [Source code](https://github.com/marlonmoreira000/braindump-app/tree/master/src)
+- [Documentation](https://github.com/marlonmoreira000/braindump-app/tree/master/docs)
+- [Unit tests](https://github.com/marlonmoreira000/braindump-app/tree/master/spec)
+
 ## Description
 
 Do you ever struggle to manage your daily schedule? Ever wonder which tasks to do first, and which ones to save for later? This CLI app lets you add your daily tasks in the morning, and then tells you which order you should do them. It plans your day, so that you don't have to.
-
-## Resources
-
-- [Source Code](https://github.com/marlonmoreira000/braindump-app/tree/master/src)
-- [Documentation](https://github.com/marlonmoreira000/braindump-app/tree/master/docs)
-- [Unit Tests](https://github.com/marlonmoreira000/braindump-app/tree/master/spec)
 
 ## Screenshots
 
